@@ -11,7 +11,7 @@
 				<h3 class="panel-title">ตืดต่อ</h3>
 			</div>
 			<div class="panel-body">
-				Facebook : Shoes2hands<br> โทร : 0839536380
+				Facebook : คมเคียว ตั้งประเสริฐ<br> โทร : 0940041210
 			</div>
 		</div>
 

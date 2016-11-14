@@ -11,7 +11,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Shose2hands</title>
+<title>ยินดีต้อนรับ</title>
 <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body style="background-color: #eee;">
@@ -20,9 +20,8 @@
 			<div class="col-md-2 col-xs-0"></div>
 			<!-- bar -->
 			<div class="col-md-8 col-xs-12">
-				<c:if test="${sessionScope.userType!=1}">
 					<jsp:include page="jsp/bar.jsp" />
-				</c:if>
+
 
 
 				<!-- end bar -->
@@ -46,6 +45,7 @@
 												<input type="file" name="file" class="form-control">
 											</div>
 										</div>
+										<input type="hidden" name="type" value="teacher">
 										<div align="center">
 											<button type="submit" class="btn btn-primary">ลงนาม</button>
 										</div>

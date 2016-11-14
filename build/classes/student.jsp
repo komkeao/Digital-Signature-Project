@@ -11,7 +11,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Shose2hands</title>
+<title>ยินดีต้อนรับ</title>
 <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body style="background-color: #eee;">
@@ -36,7 +36,9 @@
 						<div class="panel panel-default">
 							<div class="panel-body">
 								<!-- =============================================================================main============================================================================= -->
-
+								<div>
+								<h2 align="center">ลงนามเอกสาร</h2>
+								</div>
 								<div class="row">
 									<form action="signature" method="post"
 										enctype="multipart/form-data" class="form-horizontal">
@@ -46,10 +48,17 @@
 											<div class="col-md-6">
 												<input type="file" name="file" class="form-control">
 											</div>
-										</div>
+											
+										</div>			
+										<div class="form-group">
+										<label for="exampleInputEmail1" class="col-md-4 control-label">OTP</label><div class="col-md-6"> <input
+											type="password" name="password" class="form-control"
+											id="exampleInputEmail1" placeholder="Password"></div>
+									</div>
 										<input type="hidden" name="type" value="student">
 										<div align="center">
 											<button type="submit" class="btn btn-primary">ส่งเอกสาร</button>
+											<button class="btn btn-green" disabled="disabled">รับ OTP</button>
 										</div>
 
 									</form>
@@ -60,7 +69,11 @@
 								</c:if>
 								<c:if test="${result==2}">
 									<br />
-									<div class="alert alert-danger">มีเอกสารในระบบแล้ว</div>
+									<div class="alert alert-danger">เอกสารถูกลงนามแล้ว</div>
+								</c:if>
+								<c:if test="${result==3}">
+									<br />
+									<div class="alert alert-danger">รหัสผ่านผิด</div>
 								</c:if>
 								<c:if test="${result==1}">
 									<br />

@@ -12,7 +12,7 @@
 					class="icon-bar"></span> <span class="icon-bar"></span> <span
 					class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="./">Shose2hands</a>
+			<a class="navbar-brand" href="./">Digital Signature</a>
 		</div>
 
 		<!-- Collect the nav links, forms, and other content for toggling -->
@@ -20,6 +20,7 @@
 			id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
 				<li><a href="./">หน้าหลัก</a></li>
+				<li><a href="./check.jsp">เชคเอกสาร</a></li>
 				<c:if test="${sessionScope.name!=null}">
 				
 					<li><a href="account?action=logout">ออกจากระบบ</a></li>

@@ -11,7 +11,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ยินดีต้อนรับ</title>
+<title>ตรวจสอบไฟล์</title>
 <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body style="background-color: #eee;">
@@ -20,8 +20,9 @@
 			<div class="col-md-2 col-xs-0"></div>
 			<!-- bar -->
 			<div class="col-md-8 col-xs-12">
+				<c:if test="${sessionScope.userType!=1}">
 					<jsp:include page="jsp/bar.jsp" />
-
+				</c:if>
 
 
 				<!-- end bar -->
@@ -35,9 +36,14 @@
 						<div class="panel panel-default">
 							<div class="panel-body">
 								<!-- =============================================================================main============================================================================= -->
-
+								<div >
+								
+								<h2 align="center">ตรวจสอบไฟล์</h2>
+								
+								</div>
 								<div class="row">
-									<form action="signature" method="post" enctype="multipart/form-data" class="form-horizontal">
+									<form action="signature" method="post"
+										enctype="multipart/form-data" class="form-horizontal">
 										<div class="form-group">
 											<label for="exampleInputPassword1"
 												class="col-md-4 control-label">Upload</label>
@@ -45,13 +51,28 @@
 												<input type="file" name="file" class="form-control">
 											</div>
 										</div>
-										<input type="hidden" name="type" value="teacher">
+										<input type="hidden" name="type" value="check">
 										<div align="center">
-											<button type="submit" class="btn btn-primary">ลงนาม</button>
+											<button type="submit" class="btn btn-primary">ส่งเอกสาร</button>
 										</div>
 
 									</form>
 								</div>
+								<c:if test="${result==0}">
+									<br />
+									<div class="alert alert-danger">
+										เอกสารถูกแก้ไข้หรือยังไม่ได้ลงนาม</div>
+								</c:if>
+
+								<c:if test="${result==1}">
+									<br />
+									<div class="alert alert-success">
+										<h3>เอกสารลงนามถูกต้อง</h3>
+										การลงนามหมายเลข : ${data.id} <br>
+										โดย : ${data.name} <br>
+										เมื่อวันที่ : ${data.timestamp} <br>
+									</div>
+								</c:if>
 								<!-- =============================================================================main============================================================================= -->
 
 

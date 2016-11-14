@@ -7,7 +7,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Shose2hands</title>
+<title>ลงทะเบียน</title>
 <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body style="background-color: #eee;">
@@ -38,12 +38,17 @@
 									</div>
 									<br> <input type="hidden" name="action" value="register" />
 									<div class="form-group">
-										<label for="exampleInputName2" class="col-md-3 control-label">ชื่อผู้ใช้ : </label> 
+										<label for="exampleInputName2" class="col-md-3 control-label">ชื่อ-นามสกุล: </label> 
 										<div class="col-md-4">
 											<input type="text" name="username" class="form-control" id="exampleInputName2" placeholder="ชื่อผู้ใช้">
 										</div>
 									</div>
-
+									<div class="form-group">
+										<label for="exampleInputEmail2" class="col-md-3 control-label">อีเมลล์ : </label> 
+										<div class="col-md-4">
+											<input type="email" name="email" class="form-control"id="exampleInputEmail2" placeholder="อีเมลล์">
+										</div>
+									</div>
 									<div class="form-group">
 											<div class="form-inline">
 												<label for="exampleInputEmail2" class="col-md-3 control-label">รหัสผ่าน : </label> 
@@ -62,16 +67,11 @@
 									<div class="form-group">
 											<label for="exampleInputEmail2" class="col-md-3 control-label">SSN : </label> 
 											<div class="col-md-4">
-												<input type="text" name="ssn" class="form-control" id="exampleInputEmail2" placeholder="อีเมลล์">
+												<input type="text" name="ssn" class="form-control" id="exampleInputEmail2" placeholder="เลขบัตรประชาชน">
 											</div>
 									</div>
 
-									<div class="form-group">
-										<label for="exampleInputEmail2" class="col-md-3 control-label">อีเมลล์ : </label> 
-										<div class="col-md-4">
-											<input type="email" name="email" class="form-control"id="exampleInputEmail2" placeholder="อีเมลล์">
-										</div>
-									</div>
+									
 
 									<div class="form-group">
 										<label for="exampleInputEmail2" class="col-md-3 control-label">ที่อยู่ : </label>

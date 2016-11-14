@@ -37,6 +37,31 @@ public class UserDB {
 		}
 		return user;
 	}
+	public User checkPassword(int id, String password) {
+		User user = new User();
+		String sql = "SELECT * FROM User WHERE userID=? AND password=?";
+		try {
+			PreparedStatement statement = con.prepareStatement(sql);
+			statement.setInt(1, id);
+			statement.setString(2, password);
+			ResultSet result = statement.executeQuery();
+			if (result.next()) {
+				user.setUserID(result.getInt("userID"));
+				user.setPassword(result.getString("password"));
+				user.setEmail(result.getString("email"));
+				user.setAddress(result.getString("address"));
+				user.setType(result.getInt("type"));
+				user.setUsername(result.getString("username"));
+				user.setSsn(result.getString("ssn"));
+			} else {
+				user.setUserID(0);
+			}
+			con.close();
+		} catch (SQLException e) {
+			System.err.println("Error Select data :" + e);
+		}
+		return user;
+	}
 
 	public void register(User user) {
 		String sql = "INSERT INTO User(address, TYPE, PASSWORD, email, ssn, username) "
@@ -97,17 +122,5 @@ public class UserDB {
 			System.err.println("Error Select data :" + e);
 		}
 		return res;
-	}
-
-	public void deleteUserById(int userId) {
-		String sql = "DELETE FROM User Where userID=?";
-		try {
-			PreparedStatement statement = con.prepareStatement(sql);
-			statement.setInt(1, userId);
-			statement.executeUpdate();
-			con.close();
-		} catch (SQLException e) {
-			System.err.println("Error Select data :" + e);
-		}
 	}
 }
